@@ -1,0 +1,9 @@
+.search {
+  @include button;
+
+  &:hover {
+    & svg path {
+      stroke: $c-main;
+    }
+  }
+}

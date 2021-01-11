@@ -1,0 +1,52 @@
+.material-card {
+  display: block;
+  background: #0C0C10;
+  border: 1px solid #181821;
+  border-radius: 10px;
+  overflow: hidden;
+  outline: none;
+  text-decoration: none;
+
+  &:hover, &:focus, &:active {
+    outline: none;
+    text-decoration: none;
+  }
+
+  &__img {
+    position: relative;
+  }
+
+  &__num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    min-width: 39px;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    white-space: nowrap;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    letter-spacing: 0.154px;
+    color: #FFFFFF;
+    padding: 0 12px;
+  }
+
+  &__title {
+    display: block;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: -0.32px;
+    color: #FFFFFF;
+    padding: 18px;
+  }
+}

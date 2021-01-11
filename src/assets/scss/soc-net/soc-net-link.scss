@@ -1,0 +1,11 @@
+.soc-net-link {
+  @include button;
+  width: 18px;
+  height: 18px;
+
+  &:hover {
+    & svg path {
+      fill: $c-main;
+    }
+  }
+}

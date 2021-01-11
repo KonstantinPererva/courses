@@ -1,0 +1,50 @@
+.media-box {
+
+  &__panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 42px;
+    margin: 0 0 32px;
+  }
+
+  &__title {
+    font-family: $f-kh;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 42px;
+    line-height: 42px;
+    color: #FFFFFF;
+  }
+
+  &__link {
+    white-space: nowrap;
+
+    & a {
+      display: inline-block;
+      vertical-align: top;
+      color: $c-main;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+      letter-spacing: -0.154px;
+      text-decoration: none;
+      border-bottom: 1px solid currentColor;
+      transition: 150ms;
+
+      &:hover {
+        border-bottom: 1px solid transparent;
+      }
+    }
+  }
+
+  &__content {
+    position: relative;
+  }
+  
+  &__button {
+    text-align: center;
+    margin: 41px 0 0;
+  }
+}

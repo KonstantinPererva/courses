@@ -1,0 +1,35 @@
+.curator-card {
+  display: block;
+  width: 255px;
+  height: 401px;
+  background: #0C0C10;
+  border: 1px solid #181821;
+  border-radius: 10px;
+  overflow: hidden;
+
+  &__img {
+    height: 340px;
+  }
+
+  &__bottom {
+    padding: 12px 18px 0;
+  }
+
+  &__name {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.32px;
+    color: #FFFFFF;
+  }
+
+  &__status {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: -0.154px;
+    color: #858587;
+  }
+}

@@ -1,0 +1,15 @@
+.header-hold {
+  max-width: 1150px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__block {
+    display: flex;
+    align-items: center;
+  }
+}

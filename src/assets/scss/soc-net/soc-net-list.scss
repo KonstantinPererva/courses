@@ -1,0 +1,14 @@
+.soc-net-list {
+  display: flex;
+  align-items: center;
+
+  &__item {
+    .footer-hold__soc-net & {
+      margin-left: 24px;
+
+      &:first-child {
+        margin: 0;
+      }
+    }
+  }
+}

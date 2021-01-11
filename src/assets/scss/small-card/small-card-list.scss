@@ -1,0 +1,8 @@
+.small-card-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    @include grid(4, 30px, 30px);
+  }
+}

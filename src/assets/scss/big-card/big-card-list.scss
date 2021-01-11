@@ -1,0 +1,17 @@
+.big-card-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    width: calc(50% - 2.7% / 2);
+    margin: 2.7% 2.7% 0 0;
+
+    &:nth-child(1),&:nth-child(2) {
+      margin-top: 0;
+    }
+
+    &:nth-child(even) {
+      margin-right: 0;
+    }
+  }
+}

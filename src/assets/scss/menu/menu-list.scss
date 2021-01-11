@@ -1,0 +1,28 @@
+.menu-list {
+  display: flex;
+
+  &__item {
+    margin: 0 28px;
+  }
+
+  &__link {
+    display: block;
+    color: $c-text-main;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    text-align: center;
+    letter-spacing: -0.154px;
+
+    .footer-hold__menu & {
+      font-size: 16px;
+      line-height: 21px;
+      color: #FFFFFF;
+    }
+
+    &.active {
+      color: $c-main;
+    }
+  }
+}

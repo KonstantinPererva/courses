@@ -1,0 +1,75 @@
+.form-feedback {
+  &__row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__input {
+    display: block;
+    height: 56px;
+    background: #F0F0F0;
+    border-radius: 10px 0 0 10px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 56px;
+    letter-spacing: -0.32px;
+    color: #000000;
+    padding: 0 24px;
+    flex-grow: 1;
+
+    &::-webkit-input-placeholder {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 56px;
+      letter-spacing: -0.32px;
+      color: #a8a8a8;
+    }
+    &:-moz-placeholder           {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 56px;
+      letter-spacing: -0.32px;
+      color: #a8a8a8;
+    }
+    &::-moz-placeholder          {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 56px;
+      letter-spacing: -0.32px;
+      color: #a8a8a8;
+    }
+    &:-ms-input-placeholder      {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 56px;
+      letter-spacing: -0.32px;
+      color: #a8a8a8;
+    }
+  }
+
+  &__submit {
+    @include button;
+    display: block;
+    width: 160px;
+    height: 56px;
+    background: #000;
+    color: #fff;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    border-radius: 0 50px 50px 0;
+    padding: 0 24px;
+
+    &:hover, &:focus, &:active {
+      background: #181821;
+      color: $c-main;
+    }
+  }
+}
