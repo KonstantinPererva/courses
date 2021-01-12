@@ -33,7 +33,9 @@
       border-bottom: 1px solid currentColor;
       transition: 150ms;
 
-      &:hover {
+      &:hover, &:focus, &:active {
+        text-decoration: none;
+        outline: none;
         border-bottom: 1px solid transparent;
       }
     }
