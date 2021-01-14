@@ -1,3 +1,8 @@
 .section {
   margin: 72px 0;
+
+  &_small {
+    max-width: 350px;
+    width: 100%;
+  }
 }

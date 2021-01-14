@@ -1,5 +1,41 @@
 .form-main {
 
+  &_forgot-password {
+    max-width: 350px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  &__button {
+    .form-main_forgot-password & {
+      margin: 18px 0 0;
+    }
+  }
+
+  &__ico {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+  }
+
+  &__descr {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    letter-spacing: -0.154px;
+    color: #e7e6e7;
+  }
+
   &__title {
     font-style: normal;
     font-weight: normal;
@@ -11,8 +47,14 @@
   }
 
   &__row {
+    position: relative;
     display: flex;
     align-items: center;
+    width: 100%;
+
+    .form-main_forgot-password & {
+      margin: 0 0 14px;
+    }
   }
 
   &__input {
@@ -29,6 +71,28 @@
     line-height: 34px;
     letter-spacing: -0.32px;
     color: #FFFFFF;
+    
+    @include placeholder {
+      color: #858587;
+    }
+
+    &[disabled] {
+      color: #3d3d40;
+
+      .form-main_forgot-password & {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 34px;
+        letter-spacing: -0.32px;
+      }
+    }
+
+    .form-main_forgot-password & {
+      width: 100%;
+      margin: 0;
+      padding-left: 36px;
+    }
   }
 
   &__password {

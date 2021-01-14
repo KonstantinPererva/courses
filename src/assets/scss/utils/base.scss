@@ -17,6 +17,12 @@ main {
   flex-grow: 1;
 }
 
+.center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 svg {
   flex-shrink: 0;
   display: block;

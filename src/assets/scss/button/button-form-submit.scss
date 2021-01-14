@@ -16,4 +16,12 @@
     color: $c-main;
     background: #000000;
   }
+
+  &_circle {
+    border-radius: 20px;
+    height: 42px;
+    font-size: 16px;
+    line-height: 19px;
+    width: 100%;
+  }
 }
