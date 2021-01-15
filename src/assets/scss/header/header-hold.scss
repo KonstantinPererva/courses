@@ -8,6 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  z-index: 3001;
 
   &__block {
     display: flex;
