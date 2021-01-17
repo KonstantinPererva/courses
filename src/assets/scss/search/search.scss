@@ -1,7 +1,13 @@
 .search {
   @include button;
 
-  &:hover {
+  &:hover, &:focus, &:active {
+    & svg path {
+      stroke: $c-main;
+    }
+  }
+
+  &.open {
     & svg path {
       stroke: $c-main;
     }

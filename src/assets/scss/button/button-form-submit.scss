@@ -24,4 +24,11 @@
     line-height: 19px;
     width: 100%;
   }
+
+  &[disabled] {
+    background: #242427;
+    border: 1px solid #242427;
+    color: #505052;
+    cursor: default;
+  }
 }

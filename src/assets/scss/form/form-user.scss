@@ -16,6 +16,18 @@
     & + & {
       margin: 8px 0 0;
     }
+
+    &.error {
+      & .icon-error {
+        display: block;
+      }
+    }
+
+    &.success {
+      & .icon-success {
+        display: block;
+      }
+    }
   }
 
   &__input {
@@ -29,9 +41,17 @@
     font-weight: normal;
     font-size: 14px;
     line-height: 34px;
-    letter-spacing: -0.32px;
+    letter-spacing: .5px;
     color: #FFFFFF;
-    padding: 0 10px 0 36px;
+    padding: 0 36px;
+
+    .error & {
+      color: $c-error;
+    }
+
+    .success & {
+      color: $c-success;
+    }
 
     @include placeholder {
       font-size: 14px;
@@ -44,6 +64,17 @@
     }
   }
 
+  &__status {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+  }
+
   &__ico {
     position: absolute;
     left: 0;
@@ -53,6 +84,16 @@
     justify-content: center;
     width: 36px;
     height: 36px;
+
+    & svg path {
+      .error & {
+        stroke: $c-error;
+      }
+
+      .success & {
+        stroke: $c-success;
+      }
+    }
   }
 
   &__link {
@@ -88,5 +129,40 @@
     & + & {
       margin: 8px 0 0;
     }
+  }
+
+  &__descr {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+    margin: 24px 0 0;
+    letter-spacing: .5px;
+  }
+
+  &__error {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: .5px;
+    color: $c-error;
+
+    & p {
+      margin: 0;
+
+      &:first-child {
+        margin: 24px 0 0;
+      }
+    }
+
+    & span {
+      display: block;
+    }
+  }
+
+  & .icon-error, & .icon-success {
+    display: none;
   }
 }

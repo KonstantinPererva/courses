@@ -3,12 +3,17 @@
   max-width: 1150px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 20px;
-  height: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 3001;
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+    padding: 0 20px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #0B0A14;
+  }
 
   &__block {
     display: flex;
