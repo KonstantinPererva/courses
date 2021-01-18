@@ -1,0 +1,10 @@
+.button-toggle-menu {
+  @include button;
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 1151px) {
+    display: flex;
+  }
+}

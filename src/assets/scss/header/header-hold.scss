@@ -19,4 +19,22 @@
     display: flex;
     align-items: center;
   }
+
+  &__menu {
+    @media (max-width: 1151px) {
+      position: fixed;
+      left: 0;
+      top: 48px;
+      transform: translateX(-100%);
+      opacity: 0;
+      width: 320px;
+      height: calc(100% - 48px);
+      transition: 300ms;
+
+      &.open {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
 }

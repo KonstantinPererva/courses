@@ -1,6 +1,10 @@
 .menu-list {
   display: flex;
 
+  @media (max-width: 1151px) {
+    display: block;
+  }
+
   &__item {
     margin: 0 28px;
   }

@@ -13,7 +13,8 @@ function initCarousel(selector, options)
     }
 }
 
-initCarousel('.slider-curator',
+initCarousel(
+    '.slider-curator',
     {
         loop: true,
         speed: 600,
@@ -134,3 +135,4 @@ new GroupBox('[data-button="header-user"]', '[data-popup="log in"]');
 new GroupBox('[data-button="forgot password"]', '[data-popup="forgot password"]');
 new GroupBox('[data-button="registration"]', '[data-popup="registration"]');
 new GroupBox('[data-button="header-search"]', '[data-popup="search"]');
+new GroupBox('[data-button="menu"]', '[data-popup="menu"]');
