@@ -49,7 +49,6 @@ img {
   backdrop-filter: blur(5px);
   z-index: 3000;
   opacity: 0;
-  transition: 300ms;
 
   &.open {
     opacity: 1;

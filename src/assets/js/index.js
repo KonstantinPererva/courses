@@ -32,14 +32,19 @@ initCarousel(
     }
 );
 
-function GroupBox(btn, box) {
+function GroupBox(btn, box, substrate) {
     let self = this;
     self.btn = document.querySelector(btn);
     self.btn.setAttribute('data-group-btn','btn');
     self.box = document.querySelector(box);
     self.box.setAttribute('data-group-box','box');
-    self.substrate = document.querySelector('.substrate');
-    self.transition = 300;
+    self.substrate = document.querySelector(substrate);
+    self.substrate.setAttribute('data-group-box','substrate');
+    self.transition = 600;
+
+    self.box.style.transition = self.transition + 'ms';
+    self.substrate.style.transition = self.transition + 'ms';
+
     self.btn.box = self.box;
 
     self.listBtn = null;
@@ -62,12 +67,12 @@ function GroupBox(btn, box) {
 
         if (!indBtn) {
             self.openSubstrate();
-            self.openBtn(btn, 0);
-            self.openBox(btn.box);
+            self.openBtn(btn);
+            self.openBox(btn.box, 0);
         } else if (indBtn && indCurrentOpen) {
             self.closeSubstrate();
             self.closeBtn(btn);
-            self.closeBox(btn.box);
+            self.closeBox(btn.box, self.transition);
         } else if (indBtn && !indCurrentOpen) {
             self.openBtn(btn);
             self.openBox(btn.box, self.transition);
@@ -77,16 +82,20 @@ function GroupBox(btn, box) {
     self.openSubstrate = function() {
         self.substrate.style.display = 'block';
 
-        setTimeout(function () {
+        let timeId_1 = setTimeout(function () {
             self.substrate.classList.add('open');
+
+            clearTimeout(timeId_1);
         },0);
     }
 
     self.closeSubstrate = function() {
         self.substrate.classList.remove('open');
 
-        setTimeout(function () {
+        let timeId_2 = setTimeout(function () {
             self.substrate.style.display = 'none';
+
+            clearTimeout(timeId_2);
         },self.transition);
     }
 
@@ -101,19 +110,21 @@ function GroupBox(btn, box) {
     self.openBox = function (box, transition) {
         box.style.display = 'block';
 
-        let timeId = setTimeout(function () {
+        let timeId_3 = setTimeout(function () {
             box.classList.add('open');
 
-            clearTimeout(timeId);
+            clearTimeout(timeId_3);
         },transition);
     }
 
-    self.closeBox = function (box) {
+    self.closeBox = function (box, transition) {
         box.classList.remove('open');
 
-        setTimeout(function () {
+        let timeId_4 = setTimeout(function () {
             box.style.display = 'none';
-        },self.transition);
+
+            clearTimeout(timeId_4);
+        },transition);
     }
 
     self.init = function () {
@@ -123,7 +134,7 @@ function GroupBox(btn, box) {
 
         self.substrate.addEventListener('click', function() {
             self.closeBtn(self.btn);
-            self.closeBox(self.btn.box);
+            self.closeBox(self.btn.box, self.transition);
             self.closeSubstrate();
         });
     }
@@ -131,8 +142,37 @@ function GroupBox(btn, box) {
     self.init();
 }
 
-new GroupBox('[data-button="header-user"]', '[data-popup="log in"]');
-new GroupBox('[data-button="forgot password"]', '[data-popup="forgot password"]');
-new GroupBox('[data-button="registration"]', '[data-popup="registration"]');
-new GroupBox('[data-button="header-search"]', '[data-popup="search"]');
-new GroupBox('[data-button="menu"]', '[data-popup="menu"]');
+if (document.querySelector('[data-button="header-user"]') &&
+    document.querySelector('[data-popup="log in"]') &&
+    document.querySelector('.substrate'))
+{
+    new GroupBox('[data-button="header-user"]', '[data-popup="log in"]', '.substrate');
+}
+
+if (document.querySelector('[data-button="forgot password"]') &&
+    document.querySelector('[data-popup="forgot password"]') &&
+    document.querySelector('.substrate'))
+{
+    new GroupBox('[data-button="forgot password"]', '[data-popup="forgot password"]', '.substrate');
+}
+
+if (document.querySelector('[data-button="registration"]') &&
+    document.querySelector('[data-popup="registration"]') &&
+    document.querySelector('.substrate'))
+{
+    new GroupBox('[data-button="registration"]', '[data-popup="registration"]', '.substrate');
+}
+
+if (document.querySelector('[data-button="header-search"]') &&
+    document.querySelector('[data-popup="search"]') &&
+    document.querySelector('.substrate'))
+{
+    new GroupBox('[data-button="header-search"]', '[data-popup="search"]', '.substrate');
+}
+
+if (document.querySelector('[data-button="menu"]') &&
+    document.querySelector('[data-popup="menu"]') &&
+    document.querySelector('.substrate'))
+{
+    new GroupBox('[data-button="menu"]', '[data-popup="menu"]', '.substrate');
+}
