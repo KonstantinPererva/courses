@@ -13,6 +13,10 @@
     align-items: center;
     justify-content: space-between;
     background: #0B0A14;
+
+    @media (max-width: 1151px) {
+      height: 48px;
+    }
   }
 
   &__block {

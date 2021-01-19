@@ -54,3 +54,19 @@ img {
     opacity: 1;
   }
 }
+
+.box-desktop {
+  display: block !important;
+
+  @media (max-width: 767px) {
+    display: none !important;
+  }
+}
+
+.box-mob {
+  display: none !important;
+
+  @media (max-width: 767px) {
+    display: block !important;
+  }
+}

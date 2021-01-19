@@ -17,7 +17,7 @@ initCarousel(
     '.slider-curator',
     {
         loop: true,
-        speed: 600,
+        speed: 300,
         pagination: {
             el: '.pagination-bullets-box',
             type: 'bullets',
@@ -39,7 +39,7 @@ function GroupBox(btn, box, substrate) {
     self.box = document.querySelector(box);
     self.box.setAttribute('data-group-box','box');
     self.substrate = document.querySelector(substrate);
-    self.substrate.setAttribute('data-group-box','substrate');
+    self.substrate.setAttribute('data-group-substrate','substrate');
     self.transition = 600;
 
     self.box.style.transition = self.transition + 'ms';
@@ -72,7 +72,7 @@ function GroupBox(btn, box, substrate) {
         } else if (indBtn && indCurrentOpen) {
             self.closeSubstrate();
             self.closeBtn(btn);
-            self.closeBox(btn.box, self.transition);
+            self.closeBox(btn.box);
         } else if (indBtn && !indCurrentOpen) {
             self.openBtn(btn);
             self.openBox(btn.box, self.transition);
@@ -82,20 +82,16 @@ function GroupBox(btn, box, substrate) {
     self.openSubstrate = function() {
         self.substrate.style.display = 'block';
 
-        let timeId_1 = setTimeout(function () {
+        setTimeout(function () {
             self.substrate.classList.add('open');
-
-            clearTimeout(timeId_1);
         },0);
     }
 
     self.closeSubstrate = function() {
         self.substrate.classList.remove('open');
 
-        let timeId_2 = setTimeout(function () {
+        setTimeout(function () {
             self.substrate.style.display = 'none';
-
-            clearTimeout(timeId_2);
         },self.transition);
     }
 
@@ -110,21 +106,17 @@ function GroupBox(btn, box, substrate) {
     self.openBox = function (box, transition) {
         box.style.display = 'block';
 
-        let timeId_3 = setTimeout(function () {
+        setTimeout(function () {
             box.classList.add('open');
-
-            clearTimeout(timeId_3);
         },transition);
     }
 
-    self.closeBox = function (box, transition) {
+    self.closeBox = function (box) {
         box.classList.remove('open');
 
-        let timeId_4 = setTimeout(function () {
+        setTimeout(function () {
             box.style.display = 'none';
-
-            clearTimeout(timeId_4);
-        },transition);
+        },self.transition);
     }
 
     self.init = function () {
@@ -134,7 +126,7 @@ function GroupBox(btn, box, substrate) {
 
         self.substrate.addEventListener('click', function() {
             self.closeBtn(self.btn);
-            self.closeBox(self.btn.box, self.transition);
+            self.closeBox(self.btn.box);
             self.closeSubstrate();
         });
     }

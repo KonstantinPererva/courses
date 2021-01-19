@@ -4,8 +4,19 @@
   margin: 0 auto;
 
   &__picture {
+
+    @media (max-width: 767px) {
+      height: 320px;
+      display: flex;
+      justify-content: center;
+    }
+
     & img {
       width: 100%;
+      @media (max-width: 767px) {
+        max-width: 320px;
+        width: 100%;
+      }
     }
   }
   

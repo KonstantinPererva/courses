@@ -13,12 +13,25 @@
     font-style: normal;
     font-weight: normal;
     font-size: 42px;
-    line-height: 42px;
+    line-height: 100%;
     color: #FFFFFF;
+
+    @media (max-width: 767px) {
+      font-size: 28px;
+      line-height: 125%;
+    }
   }
 
   &__link {
     white-space: nowrap;
+
+    @media (max-width: 767px) {
+      text-align: center;
+
+      &.box-mob {
+        margin-top: 25px;
+      }
+    }
 
     & a {
       display: inline-block;
