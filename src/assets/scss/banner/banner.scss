@@ -5,7 +5,7 @@
 
   &__picture {
 
-    @media (max-width: 767px) {
+    @media (max-width: 992px) {
       height: 320px;
       display: flex;
       justify-content: center;
@@ -13,7 +13,8 @@
 
     & img {
       width: 100%;
-      @media (max-width: 767px) {
+
+      @media (max-width: 992px) {
         max-width: 320px;
         width: 100%;
       }

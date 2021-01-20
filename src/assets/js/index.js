@@ -134,37 +134,22 @@ function GroupBox(btn, box, substrate) {
     self.init();
 }
 
-if (document.querySelector('[data-button="header-user"]') &&
-    document.querySelector('[data-popup="log in"]') &&
-    document.querySelector('.substrate'))
-{
-    new GroupBox('[data-button="header-user"]', '[data-popup="log in"]', '.substrate');
+function handleAddGroupBox(btn,box,substrate) {
+    if (document.querySelector(btn) &&
+        document.querySelector(box) &&
+        document.querySelector(substrate))
+    {
+        new GroupBox(btn, box, substrate);
+    }
 }
 
-if (document.querySelector('[data-button="forgot password"]') &&
-    document.querySelector('[data-popup="forgot password"]') &&
-    document.querySelector('.substrate'))
-{
-    new GroupBox('[data-button="forgot password"]', '[data-popup="forgot password"]', '.substrate');
-}
 
-if (document.querySelector('[data-button="registration"]') &&
-    document.querySelector('[data-popup="registration"]') &&
-    document.querySelector('.substrate'))
-{
-    new GroupBox('[data-button="registration"]', '[data-popup="registration"]', '.substrate');
-}
+handleAddGroupBox('[data-button="header-user"]', '[data-popup="log in"]', '.substrate');
 
-if (document.querySelector('[data-button="header-search"]') &&
-    document.querySelector('[data-popup="search"]') &&
-    document.querySelector('.substrate'))
-{
-    new GroupBox('[data-button="header-search"]', '[data-popup="search"]', '.substrate');
-}
+handleAddGroupBox('[data-button="forgot password"]', '[data-popup="forgot password"]', '.substrate');
 
-if (document.querySelector('[data-button="menu"]') &&
-    document.querySelector('[data-popup="menu"]') &&
-    document.querySelector('.substrate'))
-{
-    new GroupBox('[data-button="menu"]', '[data-popup="menu"]', '.substrate');
-}
+handleAddGroupBox('[data-button="registration"]', '[data-popup="registration"]', '.substrate');
+
+handleAddGroupBox('[data-button="header-search"]', '[data-popup="search"]', '.substrate');
+
+handleAddGroupBox('[data-button="menu"]', '[data-popup="menu"]', '.substrate');
