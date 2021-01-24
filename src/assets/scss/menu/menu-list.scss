@@ -1,15 +1,25 @@
 .menu-list {
   display: flex;
 
-  @media (max-width: 1151px) {
+  @media (max-width: 992px) {
+    display: block;
+  }
+
+  .header-mob-menu & {
     display: block;
     padding: 18px 15px;
   }
 
   &__item {
+    flex-shrink: 0;
     margin: 0 28px;
+    text-align: center;
 
-    @media (max-width: 1151px) {
+    @media (max-width: 992px) {
+      margin: 0 0 24px;
+    }
+
+    .header-mob-menu & {
       margin: 0 0 13px;
 
       &:last-child {
@@ -19,7 +29,8 @@
   }
 
   &__link {
-    display: block;
+    display: inline-block;
+    vertical-align: top;
     color: $c-text-main;
     font-style: normal;
     font-weight: normal;
@@ -29,7 +40,7 @@
     letter-spacing: -0.154px;
     
     &.button-link {
-      @media (max-width: 1151px) {
+      .header-mob-menu & {
         @include button;
         height: 42px;
         width: 100%;

@@ -32,6 +32,8 @@ initCarousel(
     }
 );
 
+let resolve = false;
+
 function GroupBox(btn, box, substrate) {
     let self = this;
     self.btn = document.querySelector(btn);
@@ -40,7 +42,7 @@ function GroupBox(btn, box, substrate) {
     self.box.setAttribute('data-group-box','box');
     self.substrate = document.querySelector(substrate);
     self.substrate.setAttribute('data-group-substrate','substrate');
-    self.transition = 600;
+    self.transition = 300;
 
     self.box.style.transition = self.transition + 'ms';
     self.substrate.style.transition = self.transition + 'ms';
@@ -51,6 +53,8 @@ function GroupBox(btn, box, substrate) {
     self.listBox = null;
 
     self.change = function(btn) {
+        if (resolve) return;
+
         self.listBtn = document.querySelectorAll('[data-group-btn]');
         self.listBox = document.querySelectorAll('[data-group-box]');
 
@@ -113,10 +117,19 @@ function GroupBox(btn, box, substrate) {
 
     self.closeBox = function (box) {
         box.classList.remove('open');
+        resolve = true;
 
         setTimeout(function () {
             box.style.display = 'none';
+
+            resolve = false;
         },self.transition);
+    }
+
+    self.closeCurrentBox = function () {
+        self.closeBtn(self.btn);
+        self.closeBox(self.btn.box);
+        self.closeSubstrate();
     }
 
     self.init = function () {
@@ -132,6 +145,10 @@ function GroupBox(btn, box, substrate) {
     }
 
     self.init();
+
+    return {
+        closeCurrentBox: self.closeCurrentBox
+    }
 }
 
 function handleAddGroupBox(btn,box,substrate) {
@@ -139,10 +156,9 @@ function handleAddGroupBox(btn,box,substrate) {
         document.querySelector(box) &&
         document.querySelector(substrate))
     {
-        new GroupBox(btn, box, substrate);
+        return new GroupBox(btn, box, substrate);
     }
 }
-
 
 handleAddGroupBox('[data-button="header-user"]', '[data-popup="log in"]', '.substrate');
 
@@ -152,4 +168,69 @@ handleAddGroupBox('[data-button="registration"]', '[data-popup="registration"]',
 
 handleAddGroupBox('[data-button="header-search"]', '[data-popup="search"]', '.substrate');
 
-handleAddGroupBox('[data-button="menu"]', '[data-popup="menu"]', '.substrate');
+let mobMenu = handleAddGroupBox('[data-button="menu"]', '[data-popup="menu"]', '.substrate');
+
+function startup(node, substrate) {
+    let self = this;
+    self.node = document.querySelector(node);
+    self.substrate = document.querySelector(substrate);
+    self.node.addEventListener("touchstart", handleStart, false);
+    self.node.addEventListener("touchend", handleEnd, false);
+    self.node.addEventListener("touchmove", handleMove, false);
+
+    var ongoingTouches = [];
+    var startPoint = null;
+    var endPoint = null;
+
+    function handleStart(evt) {
+        evt.preventDefault();
+        var touches = evt.changedTouches;
+
+        for (var i = 0; i < touches.length; i++) {
+            ongoingTouches.push(touches[i]);
+        }
+
+        startPoint = ongoingTouches[ongoingTouches.length -1].pageX;
+    }
+
+    function handleEnd(evt) {
+        evt.preventDefault();
+        var touches = evt.changedTouches;
+
+        for (var i = 0; i < touches.length; i++) {
+            ongoingTouches.push(touches[i]);
+        }
+
+        endPoint = ongoingTouches[ongoingTouches.length -1].pageX;
+
+        self.node.style.transform = null;
+        self.node.style.transition = "300ms";
+        closeMenu();
+    }
+
+    function handleMove(evt) {
+        evt.preventDefault();
+        var touches = evt.changedTouches;
+
+        for (var i = 0; i < touches.length; i++) {
+            ongoingTouches.push(touches[i]);
+        }
+
+        endPoint = ongoingTouches[ongoingTouches.length -1].pageX;
+
+        let moveLength = startPoint - endPoint;
+
+        if (moveLength > 0) {
+            self.node.style.transform = "translateX(calc(0% - " + moveLength + "px))";
+            self.node.style.transition = "0ms";
+        }
+    }
+
+    function closeMenu() {
+        if (startPoint - endPoint >= 70) {
+            mobMenu.closeCurrentBox();
+        }
+    }
+}
+
+startup('[data-popup="menu"]', '.substrate');

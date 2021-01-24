@@ -21,13 +21,15 @@
   <header class="header">
     <div class="header-hold">
       <div class="header-hold__inner">
-        <button type="button" class="button-toggle-menu" data-button="menu">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2.5 10H17.5" stroke="white" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M2.5 5H17.5" stroke="white" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M2.5 15H17.5" stroke="white" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
+        <div class="header-hold__btn-toggle">
+          <button type="button" class="button-toggle-menu" data-button="menu">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2.5 10H17.5" stroke="white" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M2.5 5L17 5" stroke="white" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M2.5 15L17 15" stroke="white" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
 
         <div class="header-hold__logo">
           <div class="logo">
@@ -35,7 +37,7 @@
           </div>
         </div>
 
-        <div class="header-hold__menu" data-popup="menu">
+        <div class="header-hold__menu">
           <nav class="menu">
             <ul class="menu-list">
               <li class="menu-list__item">
@@ -344,6 +346,36 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="header-mob-menu" data-popup="menu" style="display: none">
+      <nav class="menu">
+        <ul class="menu-list">
+          <li class="menu-list__item">
+            <a href="curators.html" class="menu-list__link button-link">Кураторы</a>
+          </li>
+
+          <li class="menu-list__item">
+            <a href="top.html" class="menu-list__link button-link">Топ</a>
+          </li>
+
+          <li class="menu-list__item">
+            <a href="categories.html" class="menu-list__link button-link">Категории</a>
+          </li>
+
+          <li class="menu-list__item">
+            <a href="new.html" class="menu-list__link button-link">Новые</a>
+          </li>
+
+          <li class="menu-list__item">
+            <a href="in_trend.html" class="menu-list__link button-link">В тренде</a>
+          </li>
+
+          <li class="menu-list__item">
+            <a href="about.html" class="menu-list__link button-link">О сервисе</a>
+          </li>
+        </ul>
+      </nav>
     </div>
   </header>
 
@@ -1042,9 +1074,13 @@
             <span>© 2020 Courator</span>
           </div>
 
-          <a href="#" class="footer-link button-link">Поддержка</a>
+          <div class="footer-hold__link">
+            <a href="#" class="footer-link button-link">Поддержка</a>
+          </div>
 
-          <a href="#" class="footer-link button-link">Политика конфиденциальности</a>
+          <div class="footer-hold__link">
+            <a href="#" class="footer-link button-link">Политика конфиденциальности</a>
+          </div>
         </div>
       </div>
   </footer>

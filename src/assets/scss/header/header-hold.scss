@@ -4,6 +4,10 @@
   width: 100%;
   margin: 0 auto;
 
+  @media (max-width: 992px) {
+    max-width: 738px;
+  }
+
   &__inner {
     position: relative;
     z-index: 1;
@@ -17,32 +21,33 @@
     @media (max-width: 1151px) {
       height: 48px;
     }
+
+    @media (max-width: 992px) {
+      padding: 0 15px;
+    }
   }
 
   &__block {
     display: flex;
     align-items: center;
+
+    @media (max-width: 1151px) {
+      width: 76px;
+    }
+  }
+
+  &__btn-toggle {
+    @media (max-width: 1151px) {
+      width: 76px;
+    }
   }
 
   &__menu {
     @media (max-width: 1151px) {
-      position: fixed;
-      left: 0;
-      top: 48px;
-      transform: translateX(-100%);
-      opacity: 0;
-      width: 320px;
-      height: calc(100% - 48px);
-      transition: 300ms;
-
-      &.open {
-        opacity: 1;
-        transform: translateX(0);
-      }
+      display: none;
     }
   }
 
   &__logo {
-
   }
 }

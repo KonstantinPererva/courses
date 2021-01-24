@@ -5,4 +5,8 @@
   line-height: 21px;
   color: #b2b2b2;
   margin: 0 24px;
+
+  @media (max-width: 992px) {
+    margin: 0;
+  }
 }

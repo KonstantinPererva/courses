@@ -3,15 +3,15 @@
   flex-wrap: wrap;
 
   &__item {
-    width: calc(50% - 2.7% / 2);
-    margin: 2.7% 2.7% 0 0;
+    flex-shrink: 0;
+    @include grid(2, 30px, 30px);
 
-    &:nth-child(1),&:nth-child(2) {
-      margin-top: 0;
-    }
+    @media (max-width: 570px) {
+      @include grid(1, 30px, 30px);
 
-    &:nth-child(even) {
-      margin-right: 0;
+      &:nth-child(1n - 1) {
+        margin-right: 0;
+      }
     }
   }
 }

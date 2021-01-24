@@ -4,5 +4,17 @@
 
   &__item {
     @include grid(4, 30px, 30px);
+
+    @media (max-width: 992px) {
+      @include grid(2, 30px, 30px);
+    }
+
+    @media (max-width: 470px) {
+      @include grid(1, 16px, 16px);
+
+      &:nth-child(1n - 1) {
+        margin-right: 0;
+      }
+    }
   }
 }
