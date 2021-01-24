@@ -183,7 +183,6 @@ function startup(node, substrate) {
     var endPoint = null;
 
     function handleStart(evt) {
-        evt.preventDefault();
         var touches = evt.changedTouches;
 
         for (var i = 0; i < touches.length; i++) {
@@ -194,7 +193,6 @@ function startup(node, substrate) {
     }
 
     function handleEnd(evt) {
-        evt.preventDefault();
         var touches = evt.changedTouches;
 
         for (var i = 0; i < touches.length; i++) {
@@ -209,7 +207,6 @@ function startup(node, substrate) {
     }
 
     function handleMove(evt) {
-        evt.preventDefault();
         var touches = evt.changedTouches;
 
         for (var i = 0; i < touches.length; i++) {
