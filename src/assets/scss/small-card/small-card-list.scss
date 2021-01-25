@@ -9,12 +9,12 @@
       @include grid(2, 30px, 30px);
     }
 
-    @media (max-width: 470px) {
-      @include grid(1, 16px, 16px);
+    @media (max-width: 570px) {
+      @include grid(2, 15px, 15px);
+    }
 
-      &:nth-child(1n - 1) {
-        margin-right: 0;
-      }
+    @media (max-width: 470px) {
+      @include grid(1, 15px, 15px);
     }
   }
 }

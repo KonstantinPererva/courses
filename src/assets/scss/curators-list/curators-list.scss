@@ -4,5 +4,17 @@
 
   &__item {
     @include grid(4, 30px, 30px);
+
+    @media (max-width: 1151px) {
+      @include grid(3, 30px, 30px);
+    }
+
+    @media (max-width: 670px) {
+      @include grid(2, 15px, 15px);
+    }
+
+    @media (max-width: 470px) {
+      @include grid(1, 15px, 15px);
+    }
   }
 }

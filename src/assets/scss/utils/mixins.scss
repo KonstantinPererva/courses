@@ -52,16 +52,35 @@
   &:-ms-input-placeholder      {@content}
 }
 
+@function wr($c, $mr) {
+  @if ($c > 1) {
+    @return calc(100% / #{$c} - #{$mr} + #{$mr} / #{$c});
+  }
+  @else {
+    @return 100%;
+  }
+}
+
+@function mr($c, $mr) {
+  @if ($c > 1) {
+    @return $mr;
+  }
+  @else {
+    @return 0;
+  }
+}
+
 @mixin grid ($cols, $margin-right, $margin-top) {
   margin-right: $margin-right;
-  width: calc(100% / #{$cols} - #{$margin-right} + #{$margin-right} / #{$cols});
+
+  width: wr($cols, $margin-right);
 
   &:nth-child(#{$cols}n) {
     margin-right: 0;
   }
 
   &:nth-child(#{$cols}n - 1) {
-    margin-right: $margin-right;
+    margin-right: mr($cols, $margin-right);
   }
 
   &:nth-child(n + #{$cols}) {
