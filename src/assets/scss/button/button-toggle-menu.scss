@@ -1,12 +1,8 @@
 .button-toggle-menu {
   @include button;
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
-
-  @media (max-width: 1151px) {
-    display: flex;
-  }
 
   & svg path {
     transition: 300ms;

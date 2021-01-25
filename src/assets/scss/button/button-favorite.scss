@@ -15,6 +15,10 @@
   color: $c-main;
   border: 1px solid #303030;
 
+  @media (max-width: 738px) {
+    width: 100%;
+  }
+
   &:hover, &:focus, &:active {
     background: #1a1a1a;
     border: 1px solid $c-main;

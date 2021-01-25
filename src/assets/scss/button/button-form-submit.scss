@@ -17,6 +17,13 @@
     background: #000000;
   }
 
+  .profile-form & {
+    @media (max-width: 1151px) {
+      min-width: auto;
+      width: 100%;
+    }
+  }
+
   &_circle {
     border-radius: 20px;
     height: 42px;

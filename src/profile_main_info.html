@@ -424,21 +424,25 @@
 
                     <div class="profile-content__hold">
                         <div class="profile-content__form">
-                            <form action="!" class="form-main">
+                            <form action="!" class="form-main profile-form">
                                 <div class="form-main__title">
                                     <span>Основная информация</span>
                                 </div>
 
                                 <div class="form-main__row">
-                                    <input type="text" class="form-main__input" placeholder="Имя" />
+                                    <div class="form-main__label">
+                                        <input type="text" class="form-main__input" placeholder="Имя" />
+                                    </div>
 
-                                    <input type="text" class="form-main__input" placeholder="E-mail" />
+                                    <div class="form-main__label">
+                                        <input type="text" class="form-main__input" placeholder="E-mail" />
+                                    </div>
                                 </div>
                             </form>
                         </div>
 
                         <div class="profile-content__form">
-                            <form action="!" class="form-main">
+                            <form action="!" class="form-main profile-form">
                                 <div class="form-main__title">
                                     <span>Настройки пароля</span>
                                 </div>
@@ -450,7 +454,9 @@
                                         <a href="#" class="main-link">Забыли старый пароль?</a>
                                     </div>
 
-                                    <input type="password" class="form-main__input" placeholder="Введите новый пароль" />
+                                    <div class="form-main__label">
+                                        <input type="password" class="form-main__input" placeholder="Введите новый пароль" />
+                                    </div>
 
                                     <button class="button-form-submit" type="submit">Обновить пароль</button>
                                 </div>

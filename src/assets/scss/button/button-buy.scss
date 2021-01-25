@@ -16,6 +16,11 @@
   color: #171717;
   border: 1px solid $c-main;
 
+  @media (max-width: 738px) {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
   &:hover, &:focus, &:active {
     background: #1a1a1a;
     color: $c-main;

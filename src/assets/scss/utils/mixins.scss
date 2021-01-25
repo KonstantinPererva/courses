@@ -75,6 +75,10 @@
 
   width: wr($cols, $margin-right);
 
+  &:nth-child(n + #{$cols}) {
+    margin-right: mr($cols, $margin-right);
+  }
+
   &:nth-child(#{$cols}n) {
     margin-right: 0;
   }

@@ -52,6 +52,13 @@
     align-items: center;
     width: 100%;
 
+    .profile-form & {
+      @media (max-width: 1151px) {
+        display: block;
+      }
+    }
+
+
     .form-main_forgot-password & {
       margin: 0 0 14px;
     }
@@ -64,7 +71,6 @@
     border: 1px solid #2C2C37;
     border-radius: 5px;
     padding: 0 13px;
-    margin: 0 30px 0 0;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -74,6 +80,12 @@
     
     @include placeholder {
       color: #858587;
+    }
+
+    .profile-form & {
+      @media (max-width: 1151px) {
+        width: 100%;
+      }
     }
 
     &[disabled] {
@@ -97,6 +109,11 @@
 
   &__password {
     position: relative;
+    margin: 0 30px 0 0;
+
+    @media (max-width: 1151px) {
+      margin: 0 0 55px;
+    }
 
     & a.main-link {
       display: inline-block;
@@ -121,6 +138,15 @@
         outline: none;
         border-bottom: 1px solid transparent;
       }
+    }
+  }
+  
+  &__label {
+    position: relative;
+    margin: 0 30px 0 0;
+
+    @media (max-width: 1151px) {
+      margin: 0 0 15px;
     }
   }
 }
