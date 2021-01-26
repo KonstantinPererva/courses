@@ -28,7 +28,7 @@ initCarousel(
           nextEl: '[data-button="slider-curator-next"]',
         },
         spaceBetween: 30,
-        slidesPerView: 4
+        slidesPerView: "auto"
     }
 );
 
