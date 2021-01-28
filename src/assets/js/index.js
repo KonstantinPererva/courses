@@ -16,7 +16,7 @@ function initCarousel(selector, options)
 initCarousel(
     '.slider-curator',
     {
-        loop: true,
+        // loop: true,
         speed: 300,
         pagination: {
             el: '.pagination-bullets-box',
@@ -27,8 +27,15 @@ initCarousel(
           prevEl: '[data-button="slider-curator-prev"]',
           nextEl: '[data-button="slider-curator-next"]',
         },
-        spaceBetween: 30,
-        slidesPerView: "auto"
+        slidesPerView: "auto",
+        breakpoints: {
+            320: {
+                spaceBetween: 12
+            },
+            1024: {
+                spaceBetween: 30
+            }
+        }
     }
 );
 
