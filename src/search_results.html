@@ -15,6 +15,10 @@
     window.addEventListener('load', function () {
         document.body.style.transition = '300ms';
         document.body.style.opacity = '1';
+
+        setTimeout(function () {
+            document.body.style.transition = '0ms';
+        }, 600);
     })
 </script>
 
@@ -33,9 +37,9 @@
                 </div>
 
                 <div class="header-hold__logo">
-                    <div class="logo">
+                    <a href="/" class="logo">
                         <img src="assets/img/svg/logo.svg" alt="logo" />
-                    </div>
+                    </a>
                 </div>
 
                 <div class="header-hold__menu">
@@ -381,22 +385,32 @@
     </header>
 
     <main class="main">
-        <div class="section">
-            <div class="banner-text">
-                <div class="page-container">
-                    <div class="banner-title banner-title_dark">
-                        <span>Pharaon</span>
-                    </div>
+        <div class="banner-text">
+            <div class="page-container">
+                <div class="banner-title banner-title_dark">
+                    <span>Pharaon</span>
+                </div>
 
-                    <div class="banner-subtitle">
-                        <span></span>
-                    </div>
+                <div class="banner-subtitle">
+                    <span>Мы нашли 20 материалов </span><span>по вашему запросу </span>
                 </div>
             </div>
         </div>
 
-        <div class="section">
+        <div class="section section_top">
             <div class="page-container">
+                <nav class="search-nav">
+                    <ul class="search-nav-list">
+                        <li class="search-nav-list__item">
+                            <a href="#" class="button-gradient active">Курсы и лекции</a>
+                        </li>
+
+                        <li class="search-nav-list__item">
+                            <a href="#" class="button-gradient">Кураторы</a>
+                        </li>
+                    </ul>
+                </nav>
+
                 <div class="page-title text-center">
                     <span>Курсы и лекции</span>
                 </div>
@@ -637,9 +651,9 @@
         <div class="footer__top">
             <div class="footer-hold">
                 <div class="footer-hold__logo">
-                    <div class="logo">
+                    <a href="/" class="logo">
                         <img src="assets/img/svg/logo.svg" alt="logo" />
-                    </div>
+                    </a>
                 </div>
 
                 <div class="footer-hold__menu">

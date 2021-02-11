@@ -14,6 +14,10 @@
         window.addEventListener('load', function () {
             document.body.style.transition = '300ms';
             document.body.style.opacity = '1';
+
+            setTimeout(function () {
+                document.body.style.transition = '0ms';
+            }, 600);
         })
     </script>
 
@@ -32,9 +36,9 @@
                     </div>
 
                     <div class="header-hold__logo">
-                        <div class="logo">
+                        <a href="/" class="logo">
                             <img src="assets/img/svg/logo.svg" alt="logo" />
-                        </div>
+                        </a>
                     </div>
 
                     <div class="header-hold__menu">
@@ -408,7 +412,7 @@
                         <nav class="profile-menu">
                             <ul class="profile-menu-list">
                                 <li class="profile-menu-list__item">
-                                    <a href="#" class="button-menu">Основная информация</a>
+                                    <a href="profile_main_info.html" class="button-menu">Основная информация</a>
                                 </li>
 
                                 <li class="profile-menu-list__item">
@@ -416,7 +420,7 @@
                                 </li>
 
                                 <li class="profile-menu-list__item">
-                                    <a href="#" class="button-menu">История покупок</a>
+                                    <a href="profile_purchase_history.html" class="button-menu">История покупок</a>
                                 </li>
                             </ul>
                         </nav>
@@ -670,9 +674,9 @@
             <div class="footer__top">
                 <div class="footer-hold">
                     <div class="footer-hold__logo">
-                        <div class="logo">
+                        <a href="/" class="logo">
                             <img src="assets/img/svg/logo.svg" alt="logo" />
-                        </div>
+                        </a>
                     </div>
 
                     <div class="footer-hold__menu">

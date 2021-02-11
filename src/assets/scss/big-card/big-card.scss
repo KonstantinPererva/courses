@@ -1,9 +1,15 @@
 .big-card {
+  display: block;
   max-width: 540px;
   border-radius: 10px;
   background: #0C0C10;
   border: 1px solid #181821;
   overflow: hidden;
+  transition: 150ms;
+
+  &:hover, &:active, &:focus {
+    border: 1px solid $c-main;
+  }
 
   .big-card-list & {
     height: 100%;
@@ -28,8 +34,7 @@
     font-size: 18px;
     line-height: 21px;
     letter-spacing: -0.32px;
-    color: #FFFFFF;
-    margin: 0 0 11px;
+    padding: 18px 24px 0;
 
     @media (max-width: 992px) {
       font-size: 16px;
@@ -38,10 +43,22 @@
   }
 
   &__bottom {
-    padding: 18px 24px 14px;
+    padding: 11px 24px 14px;
 
     @media (max-width: 992px) {
-      padding: 18px 18px 14px;
+      padding: 11px 18px 14px;
+    }
+  }
+
+  &__top {
+    display: block;
+    color: #FFFFFF;
+    transition: 150ms;
+
+    &:hover, &:active, &:focus {
+      outline: none;
+      text-decoration: none;
+      color: $c-main;
     }
   }
 }

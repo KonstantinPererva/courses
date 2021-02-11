@@ -20,7 +20,6 @@
 
   &_dark {
     color: #000;
-    margin: 22px 0;
   }
 
   & span {
@@ -29,5 +28,9 @@
     @media (max-width: 480px) {
       display: inline;
     }
+  }
+
+  .banner-text & {
+    margin-top: 0;
   }
 }

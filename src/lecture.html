@@ -15,6 +15,10 @@
     window.addEventListener('load', function () {
         document.body.style.transition = '300ms';
         document.body.style.opacity = '1';
+
+        setTimeout(function () {
+            document.body.style.transition = '0ms';
+        }, 600);
     })
 </script>
 
@@ -33,9 +37,9 @@
                 </div>
 
                 <div class="header-hold__logo">
-                    <div class="logo">
+                    <a href="/" class="logo">
                         <img src="assets/img/svg/logo.svg" alt="logo" />
-                    </div>
+                    </a>
                 </div>
 
                 <div class="header-hold__menu">
@@ -789,9 +793,9 @@
         <div class="footer__top">
             <div class="footer-hold">
                 <div class="footer-hold__logo">
-                    <div class="logo">
+                    <a href="/" class="logo">
                         <img src="assets/img/svg/logo.svg" alt="logo" />
-                    </div>
+                    </a>
                 </div>
 
                 <div class="footer-hold__menu">
